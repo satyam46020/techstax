@@ -1,13 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const workflowRoutes = require('./routes/workflowRoutes');
+const workflowRoutes = require('./routes/workflow.routes');
 const connection=require("./config/db")
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/api/workflows', workflowRoutes);
 
