@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 // import UploadData from './pages/UploadData';
 import WorkflowBuilder from './components/WorkflowBuilder';
 import WorkflowExecutor from './components/WorkflowExecuter';
+import DnDFlow from './components/DnDFlow';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/builder" element={<WorkflowBuilder/>} />
         <Route path="/execution" element={<WorkflowExecutor/>} />
      </Routes>
+     
   );
 };
 
