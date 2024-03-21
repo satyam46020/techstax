@@ -3,29 +3,34 @@
 ## Objective
 
 This project aims to develop a comprehensive workflow builder application using React.js and Node.js. The application allows users to visually create workflows for basic data manipulation tasks and execute them with ease.
+
 ## Deployed Link
 
-**Frontend**
+**Frontend** https://techstax-beta.vercel.app/
 
-https://techstax-beta.vercel.app/
-
-**Backend**
-
-https://techstax.onrender.com
+**Backend** https://techstax.onrender.com
 
 ## Setup Instructions
 
 1. Clone the repository from GitHub.
 2. Navigate to the project directory in the terminal.
 3. Install dependencies:
-   ```bash
-   npm install
+
+```bash
+npm install
+```  
 4. Start the frontend development server:
-   ```bash
-   npm start
+
+```bash
+npm start
+```
+
 5. Start the backend server:
-   ```bash
-   npm server.jsl
+
+```bash
+npm server.jsl
+```
+
 6. Access the application in your web browser.
 
 ## Features
