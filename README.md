@@ -3,6 +3,15 @@
 ## Objective
 
 This project aims to develop a comprehensive workflow builder application using React.js and Node.js. The application allows users to visually create workflows for basic data manipulation tasks and execute them with ease.
+## Deployed Link
+
+**Frontend**
+
+https://techstax-beta.vercel.app/
+
+**Backend**
+
+https://techstax.onrender.com
 
 ## Setup Instructions
 
