@@ -28,16 +28,6 @@ export default function WorkFlowBuilder() {
  
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      {/* <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-      >
-        <Controls />
-        <MiniMap/>
-        </ReactFlow> */}
         <DnDFlow/>
     </div>
   );
