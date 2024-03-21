@@ -1,4 +1,3 @@
-// components/WorkflowExecutor.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -18,18 +17,19 @@ const WorkflowExecutor = () => {
 
     try {
       const formData = new FormData();
-      formData.append('workflowId', workflowId);
       formData.append('file', file);
 
-      const response = await axios.post('http://localhost:5000/api/workflows/' + workflowId + '/execute', formData, {
+      const response = await axios.post(`http://localhost:5000/api/workflows/${workflowId}/execute`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
 
       console.log(response.data);
+      alert('Workflow execution successful');
     } catch (error) {
       console.error('Error executing workflow:', error);
+      alert('Failed to execute workflow');
     }
   };
 

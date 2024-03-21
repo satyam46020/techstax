@@ -1,32 +1,29 @@
 const Workflow = require('../models/Workflow.model');
-const workflowService = require('../services/workflowService');
 
-// Controller functions for workflow operations
-const workflowController = {
-  // Save a new workflow
-  saveWorkflow: async (req, res) => {
-    try {
-      const { nodes, connections } = req.body;
-      const newWorkflow = new Workflow({ nodes, connections });
-      await newWorkflow.save();
-      res.status(201).json({ message: 'Workflow saved successfully' });
-    } catch (error) {
-      console.error('Error saving workflow:', error);
-      res.status(500).json({ error: 'Failed to save workflow' });
-    }
-  },
-
-  // Execute a saved workflow
-  executeWorkflow: async (req, res) => {
-    try {
-      const workflowId = req.params.id;
-      const result = await workflowService.executeWorkflow(workflowId);
-      res.status(200).json(result);
-    } catch (error) {
-      console.error('Error executing workflow:', error);
-      res.status(500).json({ error: 'Failed to execute workflow' });
-    }
+// Controller for saving a workflow
+exports.saveWorkflow = async (req, res) => {
+  try {
+    const { nodes, edges } = req.body;
+    const workflow = new Workflow({ nodes, edges });
+    await workflow.save();
+    res.status(201).json({ message: 'Workflow saved successfully', workflow });
+  } catch (error) {
+    console.error('Error saving workflow:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
-module.exports = workflowController;
+// Controller for retrieving a saved workflow by ID
+exports.getWorkflowById = async (req, res) => {
+  try {
+    const { workflowId } = req.params;
+    const workflow = await Workflow.findById(workflowId);
+    if (!workflow) {
+      return res.status(404).json({ error: 'Workflow not found' });
+    }
+    res.status(200).json({ workflow });
+  } catch (error) {
+    console.error('Error retrieving workflow:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};

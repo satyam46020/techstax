@@ -5,7 +5,7 @@ const workflowController = require('../controllers/workflowController');
 // Route for saving a workflow
 router.post('/', workflowController.saveWorkflow);
 
-// Route for executing a workflow
-router.post('/:workflowId/execute', workflowController.executeWorkflow);
+// Route for retrieving a saved workflow by ID
+router.get('/:workflowId', workflowController.getWorkflowById);
 
 module.exports = router;
